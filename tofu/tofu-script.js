@@ -47,9 +47,9 @@ document.getElementById('nav').innerHTML = `
     <div id='blank-space'></div>
 `
 
-document.getElementById('footer').innerHTML = `<p><b>T O F U !</b><br>
-Pro líné vegany &#128154;<br><br>
-<i>...a další <a href="http://vladdjpg.github.io/">lahůdky</a></i>`;
+document.getElementById('footer').innerHTML = `<p style="weight:bold; font-size:17px"><b>T O F U !</b><p>
+<p>Pro líné vegany &#128154;<br><br>
+<i>...a další <a href="http://xladdd.github.io/">lahůdky</a></i></p>`;
 
 
 //Initialising
@@ -64,16 +64,19 @@ let timerText = document.getElementById('timerText');
 
 // recognise page and customise it appropriately:
 const url = window.location.href;
+//console.log(url);
 let identity = url.split("/tofu");
-//console.log(identity);
-identity = identity[1].charAt(1) + identity[1].charAt(2) + identity[1].charAt(3); 
+console.log(`first identity is ${identity}: ` + typeof identity);
+identity.shift();
+console.log(`shifted identity is ${identity}: ` + typeof identity)
+identity = identity[0].charAt(1) + identity[0].charAt(2) + identity[0].charAt(3); 
 //identity can then equal var or pec
-//console.log(identity);
+console.log(`after breakdown identity is ${identity}: ` + typeof identity);
 
 switch (identity) {
 case 'var':
 //Change marquee text (change inner url of marquee id to correct bold)
-document.getElementById('marquee-content').innerHTML=`&nbsp;<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení;`
+document.getElementById('marquee-content').innerHTML=`&nbsp;<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení`
 //Set up highlight
     varList.style.display = "grid";
     varMenu.style.textDecoration = "underline";
@@ -88,7 +91,7 @@ case 'pec':
     varMenu.style.color = "#C8C8C8";
     break;
 default: 
-    document.getElementById('marquee-content').innerHTML = `&nbsp;VařeníPečeníVařeníPečeníVařeníPečeníVařeníPečeníVařeníPečeníVařeníPečeníVařeníPečeníVařeníPečeníVařeníPečeníVařeníPečeníVařeníPečeníVařeníPečeníVařeníPečeníVařeníPečeníVařeníPečení`;
+    document.getElementById('marquee-content').innerHTML = `&nbsp;<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení<b>Vaření</b>Pečení`;
     varMenu.style.color = "#3B3B3B";
     pecMenu.style.color = "#3B3B3B";
 break;
